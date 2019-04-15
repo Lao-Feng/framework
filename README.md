@@ -8,7 +8,57 @@
 
 ##### 二、技术体系
 **SpringBoot**：
-**SpringCloud**: ==gateway服务注册中心==，==Feign 服务调用==
-**Spring**：
+**SpringCloud**: Gateway 、Feign
+**Spring**：Security
+**Nacos**：注册中心、配置中心
+**Redis**
+**ElasticSearch**
+**MySQL**
+**Mybatis**
+**Swagger**
+**RabbitMQ**
 
-todo 后面我补图列说明
+辅助
+**Docker**
+**Nexus**
+**Gitlib**
+
+
+以上是主要的技术架构，其中包含了很多优化，比如HttpClient的替换等各种优化。各种技术都会有具体的实现，本项目结合电商做一个demo，大家可以基于这个做扩展。
+
+##### 三、使用方法
+
+
+##### 四、采坑记录
+* 1.gateway采坑
+gateway和zuul都是一样，这里两个的功能我就不过多描述。比较大的区别是gateway底层用的是webflux，zuul需要依赖 spring-boot-starter-web，web底层是servlet，所以所在使用gateway的时候需要排除spring-boot-starter-web。如果是单独的一个模块，无须引入spring-boot-starter-web即可，但是我是依赖的自己封装的basic，所以需要排除spring-boot-starter-web。
+
+* 2.swagger采坑
+在springCloud单模块的使用swagger很简单，但是作为多模块项目，这个时候怎么对前端开发人员集中展示swagger接口呢？其实只需要在gateway依赖swagger即可。本案例已经实现
+
+* 3.docker采坑
+本案例所有的中间件、已经部署都在docker中的，在docker中也踩了不少的雷，后面我环境部署完后，整理一个docker的文档，把所有的中间件下载、运行命令都集中起来。
+
+* 4.其他
+其实还有其他很多坑，比如注解使用不恰当等。。以此记录这次成长记录
+
+##### 五、说明
+该项目正在逐渐完善。。。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

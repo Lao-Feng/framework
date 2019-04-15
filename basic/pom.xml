@@ -55,6 +55,7 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
+
         <!--<dependency>-->
         <!--<groupId>com.alibaba</groupId>-->
         <!--<artifactId>druid-spring-boot-starter</artifactId>-->

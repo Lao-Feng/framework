@@ -1,13 +1,14 @@
 package com.framework.order.web.adapter;
 
 import com.framework.order.dao.entity.OrderEntity;
-import com.framework.order.dao.param.OrderQueryParam;
+import com.framework.order.dao.param.OrderParam;
 import com.framework.order.service.api.IOrderService;
 import com.framework.order.web.req.OrderQueryRequest;
 import com.framework.order.web.resp.OrderDetailResponse;
 import com.framework.order.web.resp.OrderQueryResponse;
 import com.github.pagehelper.Page;
 import lombok.val;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -30,7 +31,7 @@ public class OrderAdapter {
     }
 
     public OrderQueryResponse query(OrderQueryRequest request) {
-        Page<OrderEntity> page = service.query(buildOrderQueryParam(request));
+        Page<OrderEntity> page = service.query(buildOrderParam(request));
         return buildOrderQueryResponse(page);
     }
 
@@ -47,11 +48,13 @@ public class OrderAdapter {
                 .withResultSuccess();
     }
 
-    private OrderQueryParam buildOrderQueryParam(OrderQueryRequest request) {
-        return OrderQueryParam.builder()
-                .id(request.getId())
-                .build().withPageNum(request.getPageNum())
-                .withPageSize(request.getPageSize());
+    private OrderParam buildOrderParam(OrderQueryRequest request) {
+        var param = OrderParam.builder()
+                .pageNum(request.getPageNum())
+                .pageSize(request.getPageSize())
+                .build();
+        param.setId(request.getId());
+        return param;
     }
 
     private OrderQueryResponse buildOrderQueryResponse(Page<OrderEntity> page) {

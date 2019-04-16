@@ -1,7 +1,7 @@
 package com.framework.order.service.impl;
 
 import com.framework.order.dao.entity.OrderEntity;
-import com.framework.order.dao.param.OrderQueryParam;
+import com.framework.order.dao.param.OrderParam;
 import com.framework.order.dao.repo.OrderRepoRepository;
 import com.framework.order.service.api.IOrderService;
 import com.github.pagehelper.Page;
@@ -26,7 +26,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public Page<OrderEntity> query(OrderQueryParam param) {
+    public Page<OrderEntity> query(OrderParam param) {
         return repository.query(param);
     }
 }

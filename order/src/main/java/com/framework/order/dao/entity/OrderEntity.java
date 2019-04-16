@@ -1,23 +1,24 @@
 package com.framework.order.dao.entity;
 
-
 import com.framework.basic.base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
- * 订单实体对象
- *
- * @Author: FengJie
- * @Date: 2019/4/11 18:09
+ * @author Fengjie
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
+@Table(name = "t_order")
+@EqualsAndHashCode(callSuper = true)
 public class OrderEntity extends BaseEntity {
 
+    @Id
     private Long id;
 }

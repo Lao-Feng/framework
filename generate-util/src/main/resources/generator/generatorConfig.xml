@@ -1,0 +1,48 @@
+<?testDiagnoseXml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- maven执行命令   mybatis-generator:generate-->
+
+<generatorConfiguration>
+    <!--<properties resource="application-dev.properties"/>-->
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.30.21:3306/tourism"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.generate.domain" targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.generate.dao" targetProject="src/main/java" type="XMLMAPPER"/>
+
+
+        <!-- 注意
+                    1. 生成所有: tableName="%" 表示所有数据表自动生成,如果配置% 删除domainObjectName属性即可
+                    2. 生成单表: tableName="test_table" , 可以使用domainObjectName="TestTable" 属性指定生成名称
+         -->
+
+        <table tableName="t%">
+            <!--去掉前缀配置
+                       <domainObjectRenamingRule searchString="^Tb" replaceString="" />
+            -->
+
+            <!--数据表针对单个字段配置
+                       1. mysql:  <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+                       2. oracle: <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+              -->
+        </table>
+    </context>
+</generatorConfiguration>

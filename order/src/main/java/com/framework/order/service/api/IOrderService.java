@@ -1,7 +1,7 @@
 package com.framework.order.service.api;
 
 import com.framework.order.dao.entity.OrderEntity;
-import com.framework.order.dao.param.OrderQueryParam;
+import com.framework.order.dao.param.OrderParam;
 import com.github.pagehelper.Page;
 
 /**
@@ -26,5 +26,5 @@ public interface IOrderService {
      * @param param 查询条件
      * @return 响应实体
      */
-    Page<OrderEntity> query(OrderQueryParam param);
+    Page<OrderEntity> query(OrderParam param);
 }

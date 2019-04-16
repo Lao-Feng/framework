@@ -14,8 +14,10 @@ import lombok.EqualsAndHashCode;
 @Data
 @Builder
 @EqualsAndHashCode(callSuper = true)
-public class OrderQueryParam extends OrderEntity {
+public class OrderParam extends OrderEntity {
 
+    private Integer pageNum;
+    private Integer pageSize;
 }
 
 

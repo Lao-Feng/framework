@@ -4,7 +4,7 @@ import com.framework.basic.enumeration.ResultStatus;
 import com.framework.basic.util.CheckUtils;
 import com.framework.order.dao.entity.OrderEntity;
 import com.framework.order.dao.mapper.OrderMapper;
-import com.framework.order.dao.param.OrderQueryParam;
+import com.framework.order.dao.param.OrderParam;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import lombok.val;
@@ -24,11 +24,11 @@ public class OrderRepoRepository {
     private OrderMapper mapper;
 
     public OrderEntity get(Long id) {
-        val entity = mapper.get(id);
+        val entity = mapper.selectByPrimaryKey(id);
         return CheckUtils.checkEntity(entity, ResultStatus.FAIL_DATA_ACCESS);
     }
 
-    public Page<OrderEntity> query(OrderQueryParam param) {
-        return PageHelper.startPage(param.getPageNum(), param.getPageSize()).doSelectPage(() -> mapper.query(param));
+    public Page<OrderEntity> query(OrderParam param) {
+        return PageHelper.startPage(param.getPageNum(), param.getPageSize()).doSelectPage(() -> mapper.select(param));
     }
 }

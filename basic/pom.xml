@@ -6,8 +6,6 @@
     <artifactId>basic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>basic</name>
-    <packaging>jar</packaging>
-    <description>基础依赖</description>
 
     <parent>
         <groupId>com.framework</groupId>
@@ -23,6 +21,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
         <dependency>
@@ -51,8 +54,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>

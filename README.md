@@ -1,6 +1,8 @@
 #       framework （架构师-脚手架工程）  持续完善中。。。[GitHub](https://github.com/Lao-Feng/framework)
 [TOC]
 
+由于最近思考了领域驱动,打算把项目改造成领域驱动模型,不单单是一个普通的脚手架,所以最近今天都不会提交新的代码
+
 ### 一、概述
 &nbsp; &nbsp; &nbsp;最近在这段时间主要从事公司的基础架构建设，包括技术选型、环境搭建、项目基础模块搭建...<br>
 &nbsp; &nbsp; &nbsp;在此过程中真正意义干了一部分架构师或者运维这边的工作。虽然此过程枯燥无法,而且踩了无数坑，比如如何定义parent模块、如何定义basic模块、gateway仅支持webflux等等。由于之前都是一直用别人写好的，完全不能理会其中的很多设计意义，所以通过此工程的搭建，真正意义在经验上有了很大的提升。
@@ -27,6 +29,7 @@
 以上是主要的技术架构，其中包含了很多优化，比如HttpClient的替换等各种优化。各种技术都会有具体的实现，本项目结合电商做一个demo，大家可以基于这个做扩展。
 
 ### 三、模块说明
+**[nacos](./nacos/README.md)** <br>
 **[parent](./parent/README.md)** <br>
 **[basic](./basic/README.md)** <br>
 **[gateway](./gateway/README.md)** <br>

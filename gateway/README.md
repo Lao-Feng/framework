@@ -9,7 +9,7 @@
 * 第一步，下载并解压 [windows](https://github.com/alibaba/nacos/releases/download/1.0.0/nacos-server-1.0.0.zip) [linux](https://github.com/alibaba/nacos/releases/download/1.0.0/nacos-server-1.0.0.tar.gz)
 * 第二步, 到bin目录，启动 `startup.cmd`
 * 第三步，访问浏览器， http://127.0.0.1:8848/nacos，账户：nacos 密码：nacos
-* 第四步，添加对应的配置文件，以下逻辑出几个模块的配置文件
+* 第四步，添加对应的配置文件，以下逻辑出几个模块的配置文件 <br>
 **gateway** <br>
 Data ID: gateway-dev.yaml <br>
 Group  ： DEFAULT_GROUP  <br>

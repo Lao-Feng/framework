@@ -1,7 +1,7 @@
 #       framework （架构师-脚手架工程）  持续完善中。。。[GitHub](https://github.com/Lao-Feng/framework)
 [TOC]
 
-由于最近思考了领域驱动,打算把项目改造成领域驱动模型,不单单是一个普通的脚手架,所以最近今天都不会提交新的代码
+由于最近思考了领域驱动,所以整个项目是根据具 `CQRS` 理论模型创建，尽可能的设计出一个高性能的的框架
 
 ### 一、概述
 &nbsp; &nbsp; &nbsp;最近在这段时间主要从事公司的基础架构建设，包括技术选型、环境搭建、项目基础模块搭建...<br>
@@ -11,14 +11,16 @@
 ### 二、技术体系
 **SpringBoot**：<br>
 **SpringCloud**: Gateway 、Feign <br>
-**Spring**：Security <br>
+**Spring**：Security 、oath2 <br>
 **Nacos**：注册中心、配置中心 <br>
-**Redis** <br>
+**Redis**： <br>
 **ElasticSearch** <br>
 **MySQL** <br>
 **Mybatis** <br>
 **Swagger** <br>
 **RabbitMQ** <br>
+**链路监控Sleuth**<br>
+
 
 辅助 <br>
 **Docker** <br>
@@ -29,13 +31,11 @@
 以上是主要的技术架构，其中包含了很多优化，比如HttpClient的替换等各种优化。各种技术都会有具体的实现，本项目结合电商做一个demo，大家可以基于这个做扩展。
 
 ### 三、模块说明
-**[nacos](./nacos/README.md)** <br>
-**[parent](./parent/README.md)** <br>
-**[basic](./basic/README.md)** <br>
-**[gateway](./gateway/README.md)** <br>
-**[order](./order/README.md)** <br>
-**[generate-util](./generate-util/README.md)** <br>
-
+**[common 基础模块](./common/README.md)** <br>
+**[gateway 网关模块](./gateway/README.md)** <br>
+**[generate-util mybatis逆向工程](./generate-uti/README.md)** <br>
+**[examples 业务实例模块](./examples/README.md)** <br>
+**[resource 其他资料模块]** <br>
 ### 四、使用方法
 
 

@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: public,order
+  cloud:
+    nacos:
+      config:
+        prefix: framework
+        file-extension: yaml
+        server-addr: 172.20.10.3:8848

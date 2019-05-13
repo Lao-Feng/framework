@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.framework</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+    </parent>
+
+    <modules>
+        <module>gateway</module>
+        <module>common</module>
+        <module>generate-util</module>
+        <module>examples</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <encoding>UTF-8</encoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <openfeign.version>2.1.1.RELEASE</openfeign.version>
+        <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
+        <org.projectlombok.version>1.18.4</org.projectlombok.version>
+        <alibaba-nacos.version>0.2.1.RELEASE</alibaba-nacos.version>
+        <swagger.version>2.9.2</swagger.version>
+        <httpclient.version>4.5.3</httpclient.version>
+        <feign-httpclient.version>8.18.0</feign-httpclient.version>
+        <protobuf-javan.version>3.5.1</protobuf-javan.version>
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <mysql-connector-java.version>8.0.12</mysql-connector-java.version>
+        <alibaba.druid>1.1.10</alibaba.druid>
+        <fastjson.version>1.2.49</fastjson.version>
+        <guava.version>26.0-jre</guava.version>
+        <hutool-all.version>4.0.12</hutool-all.version>
+        <spring-cloud-starter-security.version>2.1.0.RELEASE</spring-cloud-starter-security.version>
+        <spring-security-oauth2-autoconfigure.version>2.1.0.RELEASE</spring-security-oauth2-autoconfigure.version>
+        <feign-okhttp.version>10.2.0</feign-okhttp.version>
+        <redisson.version>3.8.2</redisson.version>
+    </properties>
+
+    <dependencies>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--springCloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!--配置私服-->
+    <!--  <distributionManagement>
+          <repository>
+              <id>release</id>
+              <url>http://:9101/nexus/content/repositories/releases/</url>
+              <layout>default</layout>
+          </repository>
+
+          <snapshotRepository>
+              <id>snapshot</id>
+              <url>http://:9101/nexus/content/repositories/snapshots/</url>
+              <layout>default</layout>
+              <uniqueVersion>false</uniqueVersion>
+          </snapshotRepository>
+      </distributionManagement>-->
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

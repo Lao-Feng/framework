@@ -16,7 +16,6 @@
         <module>common-core</module>
         <module>common-redis</module>
         <module>common-rabbitmq</module>
-        <module>common-feign</module>
     </modules>
 
     <dependencies>

@@ -1,12 +1,10 @@
-#server:
-#  port: 8080
 spring:
-  application:
-    name: gateway
+  profiles:
+    active: gateway
   cloud:
     nacos:
       config:
+        prefix: framework
         file-extension: yaml
-        server-addr: 192.168.30.21:8848
-  profiles:
-    active: dev
+        server-addr: 172.20.10.3:8848
+

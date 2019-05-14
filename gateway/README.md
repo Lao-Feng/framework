@@ -1,84 +1,26 @@
-# 基础依赖框架
-#### 一、作用
-* 作为服务注册中心
-* 作为分布式配置中心
+# 网关模块
 
-#### 二、技术栈
+## 一、概要
+网关作为微服务的入口，现在SpringCloud可以使用的主要有个组建，分别是`zuul` 和`gateway`.在该项目中使用gateway,主要有几个原因:
+* `gateway`作为新的网关,对zuul做了很多优化和功能扩展
+* `gateway`底层使用的`webflux`,zuul底层是使用的SpringMVC,两者区别还是有点大的
+* `zuul`其实是`Netflix`公司的产品,是由`Pivotal`公司整合到SpringCloud生态圈,到目前为止,SpringCloud对该公司的产品在进入维护模式(比如eureka闭源),所以要使用SpringCloud的第二代组将产品
 
-#### 三、使用
-* 第一步，下载并解压 [windows](https://github.com/alibaba/nacos/releases/download/1.0.0/nacos-server-1.0.0.zip) [linux](https://github.com/alibaba/nacos/releases/download/1.0.0/nacos-server-1.0.0.tar.gz)
-* 第二步, 到bin目录，启动 `startup.cmd`
-* 第三步，访问浏览器， http://127.0.0.1:8848/nacos，账户：nacos 密码：nacos
-* 第四步，添加对应的配置文件，以下逻辑出几个模块的配置文件 <br>
-**gateway** <br>
-Data ID: gateway-dev.yaml <br>
-Group  ： DEFAULT_GROUP  <br>
-配置内容：
-```yaml
-server:
-  port: 8080
+基于以上几个原因,所以选择了第二代网关 ---- `gateway`
 
-spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.30.21:8848
-    gateway:
-      routes:
-      - id: order
-        uri: lb://order
-        predicates:
-        - Path=/order/**
-        filters:
-        - SwaggerHeaderFilter
-        - StripPrefix=1
+## 二、功能描述
+* 动态路由
+* 灰度发布
+* 多种限流策略
+* 安全处理(防重放/SQL注入)
+* swagger接口集中显示(可配置,保证线上停用swagger接口展示)
+* 接口幂等处理
+* 接口验签
 
-```
+注意: 权限单独处理(由统一的认证中心),网关只负责转发,尽量保证职责单一原则,只负责路由转发
 
-**order** <br>
-Data ID: order-dev.yaml <br>
-Group  ： DEFAULT_GROUP  <br>
-配置内容：
-```yaml
-server:
-  port: 8001
+## 三、使用方式
 
-spring:
-  application:
-    name: order
+## 四、项目目录
 
-  #### 数据库配置
-  datasource:
-    druid:
-      url: jdbc:mysql://192.168.30.21:3306/tourism?autoReconnect=true&useSSL=false
-      username: root
-      password: 123456
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      initial-size: 5
-      max-active: 30
-      min-idle: 5
-      max-wait: 60000
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.30.21:8848
-
-#### mybatis 配置
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    map-underscore-to-camel-case: true
-
-#### feign 配置
-feign:
-  httpclient:
-    enabled: true
-
-```
-
-#### 四、修改原生的数据库
- todo
+## 五、二次开发

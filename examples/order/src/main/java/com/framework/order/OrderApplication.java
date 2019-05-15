@@ -19,12 +19,4 @@ public class OrderApplication {
     public static void main(String[] args) {
         SpringApplication.run(OrderApplication.class, args);
     }
-
-    @Bean
-    @ConditionalOnMissingBean(
-            type = "com.framework.order.service.api.ITest")
-    public TestImpl1 testBean() {
-        return new TestImpl1();
-    }
-
 }

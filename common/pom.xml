@@ -17,12 +17,4 @@
         <module>common-redis</module>
         <module>common-rabbitmq</module>
     </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${org.projectlombok.version}</version>
-        </dependency>
-    </dependencies>
 </project>

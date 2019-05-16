@@ -1,7 +1,6 @@
 package com.framework.order.web.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * TODO
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class Demo {
 
-    @RequestMapping("/test")
     public void test() {
 
     }

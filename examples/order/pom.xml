@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>com.framework</groupId>
-            <artifactId>basic</artifactId>
+            <artifactId>common-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

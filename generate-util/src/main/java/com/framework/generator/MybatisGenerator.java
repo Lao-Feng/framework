@@ -21,7 +21,7 @@ public class MybatisGenerator {
         GlobalConfig gc = new GlobalConfig();
 
         //TODO  自定义配置一
-        gc.setOutputDir("E:\\Project\\tourism\\generate\\src\\main");
+        gc.setOutputDir("E:\\Project\\framework\\generate-util\\src\\main\\java");
         gc.setFileOverride(true);
         gc.setActiveRecord(false);
         // XML 二级缓存
@@ -56,30 +56,33 @@ public class MybatisGenerator {
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123456");
-        dsc.setUrl("jdbc:mysql://192.168.30.21:3306/ca_ct?useUnicode=true&characterEncoding=utf-8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://localhost:3306/framework?useUnicode=true&characterEncoding=utf-8&useSSL=false");
         mpg.setDataSource(dsc);
         // 策略配置
 
         //todo 自定义配置二
         StrategyConfig strategy = new StrategyConfig();
         // 此处可以修改为您的表前缀
-        strategy.setTablePrefix("pro_");
+        strategy.setTablePrefix("t_");
         // 表名生成策略
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 需要包含的表
-        strategy.setInclude("pro_product");
+        strategy.setInclude("t_order");
         // 排除生成的表
         //strategy.setExclude(new String[]{"test"});
+
         // 自定义实体父类
-        strategy.setSuperEntityClass("com.framework.mysql.base.BaseEntity");
+        //strategy.setSuperEntityClass("com.framework.mysql.base.BaseEntity");
         // 自定义实体，公共字段
-        strategy.setSuperEntityColumns(new String[]{"id", "create_by", "update_by", "create_time", "update_time", "version", "deleted"});
+        //strategy.setSuperEntityColumns(new String[]{"id", "create_by", "update_by", "create_time", "update_time", "version", "deleted"});
+
         // 自定义 mapper 父类
         strategy.setSuperMapperClass(ConstVal.SUPER_MAPPER_CLASS);
         // 自定义 service 父类
         strategy.setSuperServiceClass(ConstVal.SUPER_SERVICE_CLASS);
         // 自定义 service 实现类父类
         strategy.setSuperServiceImplClass(ConstVal.SUPER_SERVICE_IMPL_CLASS);
+
         // 【实体】是否为构建者模型（默认 false）
         //public User setName(String name) {this.name = name; return this;}
         //lombok模式
@@ -92,11 +95,11 @@ public class MybatisGenerator {
         pc.setParent("");
 
         //todo 自定义配置三 这里替换成自己的项目结构
-        pc.setController("com.framework.ct.product.controller");
-        pc.setEntity("com.framework.ct.product.model.po");
-        pc.setMapper("com.framework.ct.product.dao");
-        pc.setService("com.framework.ct.product.service");
-        pc.setServiceImpl("com.framework.ct.product.service.impl");
+        pc.setController("com.framework.demo.controller");
+        pc.setEntity("com.framework.demo.model.po");
+        pc.setMapper("com.framework.demo.mapper");
+        pc.setService("com.framework.demo.service");
+        pc.setServiceImpl("com.framework.demo.service.impl");
         pc.setXml("resources.mapper");
         mpg.setPackageInfo(pc);
         // 执行生成

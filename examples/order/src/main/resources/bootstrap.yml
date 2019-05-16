@@ -7,3 +7,22 @@ spring:
         prefix: framework
         file-extension: yaml
         server-addr: 172.20.10.3:8848
+
+  #### 数据库配置
+#  datasource:
+#    druid:
+#      url: jdbc:mysql://192.168.30.23:3306/tourism?autoReconnect=true&useSSL=false
+#      username: root
+#      password: 123456
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      initial-size: 5
+#      max-active: 30
+#      min-idle: 5
+#      max-wait: 60000
+#      time-between-eviction-runs-millis: 60000
+#      min-evictable-idle-time-millis: 300000
+#      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#mybatis-plus:
+#  mapper-locations: classpath:mapper/**/*Mapper.xml
+#  configuration:
+#    map-underscore-to-camel-case: true

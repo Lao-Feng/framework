@@ -12,18 +12,35 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <!--todo 优化-->
-
     <dependencies>
-        <dependency>
-            <groupId>com.framework</groupId>
-            <artifactId>common-core</artifactId>
-            <version>${version}</version>
-        </dependency>
         <!--gateway 网关依赖,内置webflux 依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <!--集成swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <!--集成阿里nacos 配置-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>${alibaba-nacos.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${alibaba-nacos.version}</version>
         </dependency>
 
         <dependency>

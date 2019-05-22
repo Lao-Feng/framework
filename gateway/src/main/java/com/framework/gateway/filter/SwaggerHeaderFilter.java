@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+/**
+ * swagger 过滤器
+ * @author 冯杰
+ */
 @Component
 public class SwaggerHeaderFilter implements GlobalFilter, Ordered {
     private static final String HEADER_NAME = "X-Forwarded-Prefix";

@@ -30,11 +30,10 @@ import java.util.Arrays;
 @Slf4j
 @Component
 public class GatewayRateLimitFilterByCpu1 implements RateLimitFilter {
-
     /**
      * cpu最大使用量
      */
-    @Value("${cpu.maxUsage:0.8} ")
+    @Value("${cpu.maxUsage:0.8D} ")
     private Double maxUsage;
 
     @Override

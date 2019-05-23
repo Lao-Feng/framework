@@ -1,6 +1,8 @@
 package com.framework.gateway.config;
 
 import com.framework.gateway.filter.GatewayRateLimitFilterByCpu1;
+import net.bytebuddy.asm.Advice;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -15,14 +17,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RateLimitConfiguration {
 
+    @Autowired
+    GatewayRateLimitFilterByCpu1 rateLimit;
 
     @Bean
     public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/rateLimit/")
-                        .filters(f -> f.filter(new GatewayRateLimitFilterByCpu1()))
-                        .uri("http://localhost:8000/hello/rateLimit")
-                        .id("rateLimit_route")
+                .route(r -> r.path("/order/**")
+                        .filters(f -> f.filter(rateLimit))
+                        .uri("lb://order")
+                        .id("rateLimit_CPU1")
                 ).build();
     }
 }

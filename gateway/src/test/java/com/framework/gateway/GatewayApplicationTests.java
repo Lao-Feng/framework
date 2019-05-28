@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class GatewayApplicationTests {
     @Value("${cpu.maxUsage:0.8D} ")
     private Double maxUsage;
+
     @Test
     public void contextLoads() {
         System.out.println(maxUsage);

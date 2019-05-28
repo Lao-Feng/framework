@@ -48,10 +48,11 @@ public class RedisUtil {
 
     /**
      * 模糊删除
+     *
      * @param prex 前匹配
      */
     public void deleteByPrex(String prex) {
-        Set<String> keys=redisTemplate.keys(prex+"*");
+        Set<String> keys = redisTemplate.keys(prex + "*");
 
         if (keys != null && keys.size() > 0) {
             redisTemplate.delete(keys);
@@ -80,7 +81,7 @@ public class RedisUtil {
         if (value == null) {
             return null;
         }
-        return JSON.parseObject(value,clazz);
+        return JSON.parseObject(value, clazz);
     }
 
     /**
@@ -118,7 +119,6 @@ public class RedisUtil {
     }
 
     /**
-     *
      * 描述: 指定缓存的剩余时间，秒
      * 参数 ：@param key
      * 参数 ：@param timeout
@@ -126,10 +126,11 @@ public class RedisUtil {
      * 返回结果： boolean
      * 作者： 余里
      * 时间： 2017年8月2日 上午11:37:23
-     * @version V1.0
+     *
      * @throws
+     * @version V1.0
      */
-    public boolean expire(String key,long timeout){
+    public boolean expire(String key, long timeout) {
         return redisTemplate.expire(key, timeout, TimeUnit.SECONDS);
     }
 

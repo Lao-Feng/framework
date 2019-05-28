@@ -19,7 +19,7 @@ public class OrderApplicationTests {
 
     @Test
     public void contextLoads() {
-        List<com.framework.order.dao.entity.Test > tests = mapper.selectList(null);
+        List<com.framework.order.dao.entity.Test> tests = mapper.selectList(null);
         System.out.println(tests.toString());
 
     }

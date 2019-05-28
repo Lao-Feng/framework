@@ -42,4 +42,9 @@ public class SwaggerHandler {
     public Mono<ResponseEntity> swaggerResources() {
         return Mono.just((new ResponseEntity<>(swaggerResources.get(), HttpStatus.OK)));
     }
+    @GetMapping("/v2/api-docs")
+    public Mono<ResponseEntity> index() {
+        return Mono.just((new ResponseEntity<>(swaggerResources.get(), HttpStatus.OK)));
+    }
+
 }

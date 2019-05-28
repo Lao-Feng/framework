@@ -12,9 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * swagger  配置
+ *
  * @Author: FengJie
  * @Date: 2019/4/13 18:50
- * @Description: swagger  配置
  */
 @Component
 @Primary
@@ -36,7 +37,7 @@ public class GetWayResource implements SwaggerResourcesProvider {
         List<String> routes = new ArrayList<>();
         //获取eureka中路由信息
         routeLocator.getRoutes().subscribe(route -> routes.add(route.getId().replace("CompositeDiscoveryClient_", "")));
-        resources.add(this.swaggerResource("default", "/v2/api-docs", "2.0"));
+        resources.add(this.swaggerResource("default", "/swagger-resources/v2/api-docs", "2.0"));
         routes.forEach((route) -> {
             String lowerRoute = route.toLowerCase();
             if (!filterUrl.contains(lowerRoute)) {
@@ -54,4 +55,3 @@ public class GetWayResource implements SwaggerResourcesProvider {
         return swaggerResource;
     }
 }
-

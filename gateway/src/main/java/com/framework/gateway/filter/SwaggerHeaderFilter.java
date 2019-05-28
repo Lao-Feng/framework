@@ -10,12 +10,13 @@ import reactor.core.publisher.Mono;
 
 /**
  * swagger 过滤器
+ *
  * @author 冯杰
  */
 @Component
 public class SwaggerHeaderFilter implements GlobalFilter, Ordered {
-    private static final String HEADER_NAME = "X-Forwarded-Prefix";
     public static final String API_URI = "/v2/api-docs";
+    private static final String HEADER_NAME = "X-Forwarded-Prefix";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

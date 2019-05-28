@@ -63,8 +63,11 @@ spring:
 ```
 
 ### 五、说明
-该项目正在逐渐完善。。。
-
+后期规划
+集成分布式调度中心XXL-JOB
+集成工作流activity6
+提供分布式事务
+分库分表
 
 [GitHub](https://github.com/Lao-Feng)&nbsp; &nbsp;[个人博客](http://118.126.112.183:4000/) &nbsp; &nbsp;[简书](https://www.jianshu.com/u/63299b8dc868) &nbsp; &nbsp;[CSDN](https://blog.csdn.net/lao__feng) &nbsp; &nbsp;[开源中国](https://my.oschina.net/u/3865326)
 

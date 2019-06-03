@@ -1,4 +1,4 @@
-package com.framework.gateway.filter;
+package com.example.demo;
 
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -8,15 +8,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-/**
- * swagger 过滤器
- *
- * @author 冯杰
- */
 @Component
 public class SwaggerHeaderFilter implements GlobalFilter, Ordered {
-    public static final String API_URI = "/v2/api-docs";
     private static final String HEADER_NAME = "X-Forwarded-Prefix";
+    public static final String API_URI = "/v2/api-docs";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

@@ -1,4 +1,4 @@
-package com.framework.gateway.config;
+package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,10 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * swagger  配置
- *
  * @Author: FengJie
  * @Date: 2019/4/13 18:50
+ * @Description: swagger  配置
  */
 @Component
 @Primary
@@ -55,3 +54,4 @@ public class GetWayResource implements SwaggerResourcesProvider {
         return swaggerResource;
     }
 }
+

@@ -1,18 +1,15 @@
-package com.framework.gateway;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-/**
- * @author 冯杰
- */
-@EnableDiscoveryClient
 @SpringBootApplication
-public class GatewayApplication {
+@EnableDiscoveryClient
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 }

@@ -1,20 +1,9 @@
-server:
-  port: 8080
-  filter:
-    name: "framework-gateway,gateway,default"
-
 spring:
-  application:
-    name: framework-gateway
   cloud:
     nacos:
-      discovery:
-        server-addr: 172.20.10.3:8848
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-
-cpu:
-  maxUsage: 0.8
+      config:
+        file-extension: yaml
+        prefix: framework
+        server-addr: 127.0.0.1:8848
+  profiles:
+    active: gateway

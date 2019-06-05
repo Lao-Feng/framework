@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.framework.gateway.handler;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -21,7 +21,7 @@ public class MybatisGenerator {
         GlobalConfig gc = new GlobalConfig();
 
         //TODO  自定义配置一
-        gc.setOutputDir("E:\\Project\\framework\\generate-util\\src\\main\\java");
+        gc.setOutputDir("E:\\Project\\framework\\generate-tool\\src\\main\\java");
         gc.setFileOverride(true);
         gc.setActiveRecord(false);
         // XML 二级缓存

@@ -1,4 +1,4 @@
-package com.framework.core.util;
+package com.framework.core.tool.util;
 
 import lombok.Synchronized;
 import lombok.val;

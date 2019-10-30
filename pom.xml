@@ -38,7 +38,7 @@
         <alibaba.druid>1.1.10</alibaba.druid>
         <fastjson.version>1.2.49</fastjson.version>
         <guava.version>26.0-jre</guava.version>
-        <hutool-all.version>4.0.12</hutool-all.version>
+        <hutool-all.version>4.1.12</hutool-all.version>
         <feign-okhttp.version>10.2.0</feign-okhttp.version>
         <redisson.version>3.8.2</redisson.version>
         <actuator.version>2.0.4.RELEASE</actuator.version>

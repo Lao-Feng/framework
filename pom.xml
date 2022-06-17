@@ -36,7 +36,7 @@
         <mybatis-plus.version>3.1.1</mybatis-plus.version>
         <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
         <alibaba.druid>1.1.10</alibaba.druid>
-        <fastjson.version>1.2.49</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <guava.version>26.0-jre</guava.version>
         <hutool-all.version>4.0.12</hutool-all.version>
         <feign-okhttp.version>10.2.0</feign-okhttp.version>
